@@ -2,14 +2,14 @@ Resources:
   AttachmentsBucket:
     Type: AWS::S3::Bucket
     Properties:
-      #Set the CORS Policy
+      # Set the CORS policy
       CorsConfiguration:
         CorsRules:
           -
             AllowedOrigins:
-              - "*"
+              - '*'
             AllowedHeaders:
-              - "*"
+              - '*'
             AllowedMethods:
               - GET
               - PUT
@@ -20,6 +20,6 @@ Resources:
 
 # Print out the name of the bucket that is created
 Outputs:
-  AttachmentBucketName:
+  AttachmentsBucketName:
     Value:
       Ref: AttachmentsBucket

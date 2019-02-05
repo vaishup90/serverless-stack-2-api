@@ -4,14 +4,14 @@ Resources:
     Type: AWS::Cognito::IdentityPool
     Properties:
       # Generate a name based on the stage
-      IdentityPoolName: $(self:custom.stage)VpIdentityPool
+      IdentityPoolName: ${self:custom.stage}VpsIdentityPool
       # Don't allow unathenticated users
       AllowUnauthenticatedIdentities: false
       # Link to our User Pool
       CognitoIdentityProviders:
         - ClientId:
             Ref: CognitoUserPoolClient
-           ProviderName:
+          ProviderName:
             Fn::GetAtt: [ "CognitoUserPool", "ProviderName" ]
             
   # IAM roles

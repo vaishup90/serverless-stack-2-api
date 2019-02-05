@@ -3,19 +3,17 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: ${self:custom.tableName}
-      AttributeDefinition:
+      AttributeDefinitions:
         - AttributeName: userId
           AttributeType: S
         - AttributeName: noteId
           AttributeType: S
-      KeyScheme:
+      KeySchema:
         - AttributeName: userId
           KeyType: HASH
         - AttributeName: noteId
           KeyType: RANGE
-      #set the capacity based on the stage
-      ProvisionedThroughput
+      # Set the capacity based on the stage
+      ProvisionedThroughput:
         ReadCapacityUnits: ${self:custom.tableThroughput}
         WriteCapacityUnits: ${self:custom.tableThroughput}
-
-      
