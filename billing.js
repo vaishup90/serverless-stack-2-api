@@ -15,7 +15,9 @@ export async function main(event,context){
             amount,
             description,
             currency: "usd"
-        })
+        });
+
+        return success({ status: true });
     }catch(e){
         return failure({ message: e.message })
     }
