@@ -121,4 +121,5 @@ resources:
   - ${file(resources/dynamodb-table.yml)}
   # S3 Bucket
   - $(file(resources/s3-bucket.yml))
-  
+  # Cognito 
+  - $(file(resources/cognito-user-pool.yml))
